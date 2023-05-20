@@ -86,15 +86,35 @@ def buttons(message):
         elif message.text == 'Grammar tests':
             topic_history.append('Grammar tests')
             buttons_grammar(message)
+        elif topic_history and topic_history[-1] == 'Grammar tests' and message.text != 'Back':
+            if message.text == 'A1-A2':
+                bot.send_message(message.chat.id, 'Your choosen level: A1-A2')
+            elif message.text == 'B1-B2':
+                bot.send_message(message.chat.id, 'Your choosen level: B1-B2')
+            elif message.text == 'C1-C2':
+                bot.send_message(message.chat.id, 'Your choosen level: C1-C2')
+            else:
+                bot.send_message(message.chat.id, 'Please, choose one of the buttons below' , parse_mode = 'html')
+
         elif message.text == 'Vocabulary learning':
             topic_history.append('Vocabulary learning')
             buttons_vocabulary(message)
-        elif message.text == 'Back':
-            topic_history.pop()
-            if len(topic_history) != 0:
-                message.text = topic_history[-1]
+        elif topic_history and topic_history[-1] == 'Vocabulary learning' and message.text != 'Back':
+            if message.text == 'A1-A2':
+                bot.send_message(message.chat.id, 'Your choosen level: A1-A2')
+            elif message.text == 'B1-B2':
+                bot.send_message(message.chat.id, 'Your choosen level: B1-B2')
+            elif message.text == 'C1-C2':
+                bot.send_message(message.chat.id, 'Your choosen level: C1-C2')
             else:
-                buttons_start(message)
+                bot.send_message(message.chat.id, 'Please, choose one of the buttons below', parse_mode='html')
+        elif message.text == 'Back':
+            if len(topic_history) > 0:
+                topic_history.pop()
+                if len(topic_history) > 0:
+                    message.text = topic_history[-1]
+                else:
+                    buttons_start(message)
         else:
             bot.send_message(message.chat.id, 'Please, choose one of the buttons below' , parse_mode = 'html')
 
