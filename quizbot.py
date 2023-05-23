@@ -1,6 +1,8 @@
 import telebot
 import random
 from telebot import types
+BOT_TOKEN = '6036332987:AAHea3RMb_mSjNKPy2wCWeCpOWkN7HG1Kiw'
+bot = telebot.TeleBot(BOT_TOKEN)
 topic_history = []
 
 
@@ -65,7 +67,6 @@ def handle_answer(message):
         test_a1_a2(message)
     elif message.text == 'Back':
         bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
-        bot.remove_message_handler(handle_answer)
         question_counter = 1
         correct_answers = 0
         return buttons_grammar(message)
