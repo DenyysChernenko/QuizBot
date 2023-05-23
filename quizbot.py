@@ -46,7 +46,6 @@ def vocabulary_tests(message):
             question = lines[index-1]
             options = lines[index].split(",")
             answer = options[0].strip()
-
             random.shuffle(options)
 
             markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
@@ -113,6 +112,8 @@ def grammar_tests(message):
             question = lines[index-1]
             options = lines[index].split(",")
             answer = options[0].strip()
+            bot.send_message(message.chat.id, f'index == {index}')
+            bot.send_message(message.chat.id, f'index == {index-1}')
 
             random.shuffle(options)
 
