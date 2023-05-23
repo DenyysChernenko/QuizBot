@@ -1,6 +1,99 @@
 import telebot
+import random
 from telebot import types
 topic_history = []
+
+
+question_counter = 1
+correct_answers = 0
+options = []
+answer = ''
+# Functions for tests
+
+
+
+# Functions for tests
+
+
+@bot.message_handler(func=lambda message: message == 'A1-A2')
+def test_a1_a2(message):
+    # bot.send_message(message.chat.id,'<b>CHECKKKKKKKKKK </b>', parse_mode='html')
+    global question_counter
+    global correct_answers
+    global options
+    global answer
+
+    if question_counter >= 10:
+        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
+        question_counter = 1
+        correct_answers = 0
+        options = []
+        return
+
+    with open('A1-A2.txt', 'r') as file:
+        lines = file.readlines()
+        index = random.randint(1, len(lines) // 2)
+        index = index * 2 - 1 if index * 2 - 1 <= len(lines) else len(lines)
+
+
+        if index <= len(lines):
+            question = lines[index-1]
+            options = lines[index].split(",")
+            answer = options[0].strip()
+            bot.send_message(message.chat.id, f'index - {index}')
+            bot.send_message(message.chat.id, f'index - {len(lines)}')
+
+
+            random.shuffle(options)
+
+            markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+            answer_buttons = [telebot.types.KeyboardButton(option.strip()) for option in options]
+            markup.add(*answer_buttons)
+            markup.add('Back')
+
+            bot.send_message(message.chat.id, f'{question_counter}. {question}', reply_markup=markup)
+            bot.register_next_step_handler(message, handle_answer)
+
+
+def handle_answer(message):
+    global question_counter
+    global correct_answers
+
+    if message.text == answer:
+        correct_answers += 1
+        bot.reply_to(message, f'Correct answer! Correct answers: {correct_answers}✔️')
+        test_a1_a2(message)
+    elif message.text == 'Back':
+        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
+        question_counter = 1
+        correct_answers = 0
+        return buttons_grammar(message)
+    else:
+        bot.reply_to(message, f'Wrong answer! Correct answers: {correct_answers}❌')
+        bot.send_message(message.chat.id, f'Correct answer is: \"{answer}\"🕵️‍♂️')
+        test_a1_a2(message)
+
+    question_counter += 1
+    if question_counter >= 10:
+        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
+        question_counter = 1
+        correct_answers = 0
+        return buttons_grammar(message)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,6 +154,7 @@ def buttons_grammar(message):
     level_message = "Now, you must pich your current level of Engllish.\n"
     bot.send_message(message.chat.id, level_message, reply_markup=markup, parse_mode='html')
 
+
 @bot.message_handler(commands=['Vocabulary learning'])
 def buttons_vocabulary(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
@@ -74,6 +168,7 @@ def buttons_vocabulary(message):
     level_message = "Now, you must pich your current level of Engllish.\n"
     bot.send_message(message.chat.id, level_message, reply_markup=markup, parse_mode='html')
 
+
 # Parsing text
 @bot.message_handler(content_types=['text'])
 def buttons(message):
@@ -86,11 +181,13 @@ def buttons(message):
             buttons_grammar(message)
         elif topic_history and topic_history[-1] == 'Grammar tests' and message.text != 'Back':
             if message.text == 'A1-A2':
-                bot.send_message(message.chat.id, 'Your choosen level: A1-A2')
+                bot.send_message(message.chat.id, 'Your chosen level: <b>A1-A2</b>', parse_mode='html')
+                test_a1_a2(message)
             elif message.text == 'B1-B2':
-                bot.send_message(message.chat.id, 'Your choosen level: B1-B2')
+                bot.send_message(message.chat.id, 'Your choosen level: <b>B1-B2</b>', parse_mode = 'html')
             elif message.text == 'C1-C2':
-                bot.send_message(message.chat.id, 'Your choosen level: C1-C2')
+                bot.send_message(message.chat.id, 'Your choosen level: <b>C1-C2</b>', parse_mode = 'html')
+
             else:
                 bot.send_message(message.chat.id, 'Please, choose one of the buttons below' , parse_mode = 'html')
 
@@ -99,11 +196,11 @@ def buttons(message):
             buttons_vocabulary(message)
         elif topic_history and topic_history[-1] == 'Vocabulary learning' and message.text != 'Back':
             if message.text == 'A1-A2':
-                bot.send_message(message.chat.id, 'Your choosen level: A1-A2')
+                bot.send_message(message.chat.id, 'Your choosen level: <b>A1-A2</b>', parse_mode = 'html')
             elif message.text == 'B1-B2':
-                bot.send_message(message.chat.id, 'Your choosen level: B1-B2')
+                bot.send_message(message.chat.id, 'Your choosen level: <b>B1-B2</b>', parse_mode = 'html')
             elif message.text == 'C1-C2':
-                bot.send_message(message.chat.id, 'Your choosen level: C1-C2')
+                bot.send_message(message.chat.id, 'Your choosen level: <b>C1-C2</b>', parse_mode = 'html')
             else:
                 bot.send_message(message.chat.id, 'Please, choose one of the buttons below', parse_mode='html')
         elif message.text == 'Back':
