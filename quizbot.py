@@ -1,7 +1,8 @@
 import telebot
 import random
 from telebot import types
-
+BOT_TOKEN = '6036332987:AAHea3RMb_mSjNKPy2wCWeCpOWkN7HG1Kiw'
+bot = telebot.TeleBot(BOT_TOKEN)
 topic_history = []
 
 
@@ -12,10 +13,73 @@ answer = ''
 chosen_lvl = ''
 # Functions for tests
 
+def vocabulary_tests(message):
+    global question_counter
+    global correct_answers
+    global options
+    global answer
+    global chosen_lvl
+
+    if question_counter > 5:
+        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!!!!!')
+        question_counter = 1
+        correct_answers = 0
+        bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
+        return buttons_grammar(message)
+
+    if message.text == 'A1-A2':
+        file_names = 'A1-A2_vocabulary.txt'
+        chosen_lvl = file_names
+    elif message.text == 'B1-B2':
+        file_names = 'B1-B2_vocabulary.txt'
+        chosen_lvl = file_names
+    elif message.text == 'C1-C2':
+        file_names = 'C1-C2_vocabulary.txt'
+        chosen_lvl = file_names
+    else:
+        chosen_lvl = chosen_lvl
+
+    with open(chosen_lvl, 'r') as file:
+        lines = file.readlines()
+        index = random.randint(1, len(lines) // 2)
+        index = index * 2 - 1 if index * 2 - 1 <= len(lines) else len(lines)
+
+        if index <= len(lines):
+            question = lines[index-1]
+            options = lines[index].split(",")
+            answer = options[0].strip()
+
+            random.shuffle(options)
+
+            markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+            answer_buttons = [telebot.types.KeyboardButton(option.strip()) for option in options]
+            markup.add(*answer_buttons)
+            markup.add('Back')
+
+            bot.send_message(message.chat.id, f'{question_counter}. {question}', reply_markup=markup)
+            bot.register_next_step_handler(message, handle_answer)
+
+def handle_answer(message):
+    global question_counter
+    global correct_answers
+    question_counter += 1
+    if message.text == answer:
+        correct_answers += 1
+        bot.reply_to(message, f'Correct answer! Correct answers: {correct_answers}✔️')
+        vocabulary_tests(message)
+    elif message.text == 'Back':
+        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
+        question_counter = 1
+        correct_answers = 0
+        bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
+        return button_vocabulary(message)
+    else:
+        bot.reply_to(message, f'Wrong answer! Correct answers: {correct_answers}❌')
+        bot.send_message(message.chat.id, f'Correct answer is: \"{answer}\"🕵️‍♂️')
+        vocabulary_tests(message)
 
 
 # Functions for tests
-@bot.message_handler(func=lambda message: message == 'A1-A2' or message == 'B1-B2' or message == 'C1-C2')
 def grammar_tests(message):
     global question_counter
     global correct_answers
@@ -83,6 +147,8 @@ def handle_answer(message):
         grammar_tests(message)
 
 
+
+
 # Functions
 def help(message):
     choosen_option_message = 'You have chosen <b>Help</b> option!\n'
@@ -136,7 +202,7 @@ def buttons_grammar(message):
 
 
 @bot.message_handler(commands=['Vocabulary learning'])
-def buttons_vocabulary(message):
+def button_vocabulary(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     first_level_button = types.KeyboardButton('A1-A2')
     second_level_button = types.KeyboardButton('B1-B2')
@@ -144,9 +210,15 @@ def buttons_vocabulary(message):
     back_button = types.KeyboardButton('Back')
     markup.add(first_level_button, second_level_button, third_level_button, back_button)
     choosen_option_message = f"You have chosen <b>Vocabulary learning.</b>\n"
+    bot.send_message(message.chat.id, f'<b>Words and definitions</b> - you will be given a'
+                                      f'definition of the word, and you have to choose the'
+                                      f'most suitable word from the 4 given options.', parse_mode='html', reply_markup=markup)
     bot.send_message(message.chat.id, choosen_option_message, reply_markup=markup, parse_mode='html')
     level_message = "Now, you must pick your current level of English.\n"
     bot.send_message(message.chat.id, level_message, reply_markup=markup, parse_mode='html')
+
+
+
 
 
 # Parsing text
@@ -175,16 +247,17 @@ def buttons(message):
 
         elif message.text == 'Vocabulary learning':
             topic_history.append('Vocabulary learning')
-            buttons_vocabulary(message)
+            button_vocabulary(message)
         elif topic_history and topic_history[-1] == 'Vocabulary learning' and message.text != 'Back':
             if message.text == 'A1-A2':
-                bot.send_message(message.chat.id, 'Your chosen level: <b>A1-A2</b>', parse_mode = 'html')
+                bot.send_message(message.chat.id, 'Your chosen level: <b>A1-A2</b>', parse_mode='html')
+                vocabulary_tests(message)
             elif message.text == 'B1-B2':
                 bot.send_message(message.chat.id, 'Your chosen level: <b>B1-B2</b>', parse_mode = 'html')
+                vocabulary_tests(message)
             elif message.text == 'C1-C2':
                 bot.send_message(message.chat.id, 'Your chosen level: <b>C1-C2</b>', parse_mode = 'html')
-            else:
-                bot.send_message(message.chat.id, 'Please, choose one of the buttons below', parse_mode='html')
+                vocabulary_tests(message)
         elif message.text == 'Back':
             if len(topic_history) > 0:
                 topic_history.pop()
