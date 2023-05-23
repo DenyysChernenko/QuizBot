@@ -1,7 +1,6 @@
 import telebot
 import random
 from telebot import types
-
 topic_history = []
 
 
