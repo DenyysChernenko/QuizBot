@@ -1,0 +1,11 @@
+It's high time you __ that.
+stopped,to stop,stop,stopping
+I'm not used to __ in public.
+speak,speaking,speaking,speaked
+The negative of 'noble' is __
+ignoble,ignoble,ignobly,ignobled
+If he __, I won't stay
+comes,come,came,coming
+I spent twenty minutes __ the test.
+doing,do,done,to do
+
