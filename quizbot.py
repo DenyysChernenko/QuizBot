@@ -150,10 +150,14 @@ def handle_answer(message):
 def help(message):
     choosen_option_message = 'You have chosen <b>Help</b> option!\n'
     help_message = (
-        f"Hi, <b>{message.from_user.first_name}!</b> Our tasks are designed to improve your English grammar and vocabulary.\n"
-        "Grammar will give you a solid understanding of the rules and structures that govern the English language.\n"
-        "Vocabulary will give you a wide range of words and their meanings.\n"
-        "Thanks a lot for using our quizbot.\n"
+        f"Hi, <b>{message.from_user.first_name}!</b> Our tasks are designed to improve your English grammar and vocabulary.📚 \n"
+        "<b>Grammar</b> topic you will have a different types of questions, and you need to choose the correct answer from 4 options.\n"
+        "<b>Vocabulary</b> section mostly has three types of tests:\n"
+        "finding a synonym, choosing the word by its definition, and inserting the correct word in a sentence.\n"
+        "Thank you, guys, that you are using my quizbot!\n"
+        "I really appreciate it.\n"
+        "<b>⚠️WARNING️:</b> Please, guys, don't spam inside the tests. Just click on the button once, and wait for bot printing the next question.\n"
+        "The bot is not perfect, and can break due to spamming answers. Thanks!\n"
     )
     bot.send_message(message.chat.id, choosen_option_message, parse_mode='html')
     bot.send_message(message.chat.id, help_message, parse_mode='html')
@@ -161,9 +165,14 @@ def help(message):
 def about_authors(message):
     choosen_option_message = 'You have chosen <b>About authors</b> option!\n'
     about_authors_message = (
-                            f"We are the Ukranian students Denys and Ivan, who study not in Ukraine.\n"
-                            f"We appreciate you for using our bot to learn English.\n" 
-                            "English is fun!\n" )
+        f"Hi, guys! We are Denys and Ivan, two 18-year-old Ukrainian students who are studying abroad right now.\n"
+        f"(you might know why 😊).\n"
+        f"We want to create a really good Telegram bot, that can help you learn English anywhere!\n"
+        f"Also, we are not quite proficient in programming, but we are currently studying it, and you can also help us with it!\n"
+        "Here is my Telegram account for some feedback to improve our project:\n"
+        "<a href='https://t.me/denischernenkoo'>Denys</a>\n"
+        "We appreciate you for using our bot to learn English.\n"
+    )
     bot.send_message(message.chat.id, choosen_option_message, parse_mode='html')
     bot.send_message(message.chat.id, about_authors_message, parse_mode='html')
 
