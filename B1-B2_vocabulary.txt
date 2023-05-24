@@ -1,20 +1,150 @@
-The act of making a judgment or forming an opinion about something.
-Evaluate, Neglect, Sustain, Revise
-The act of persuading someone to do or believe something.
-Convince, Distract, Compose, Reject
-The act of making something start or happen.
-Initiate, Conclude, Reflect, Convey
-The act of obtaining knowledge or information through observation or experience.
-Acquire, Resist, Propose, Investigate
-The act of causing someone to feel deeply hurt, upset, or angry.
-Offend, Relate, Disclose, Deviate
-The act of making a formal statement about a fact, occurrence, or intention.
-Declare, Contradict, Pursue, Reveal
-The act of treating someone with kindness and care.
-Nurture, Resist, Pursue, Evolve
-The act of confirming the truth or correctness of something.
-Verify, Encounter, Neglect, Complicate
-The act of causing someone to feel admiration, respect, or amazement.
-Inspire, Conclude, Persist, Promote
-The act of reducing the size, amount, or importance of something.
-Diminish, Participate, Enrich, Engage
+Come to Turkland, and __ all these places where history lives on
+discover,define,memorize,mention
+I'm __ an answer within a few days.
+expecting,hoping,accepting,waiting
+Keeping a diary is no doubt quite a useful personal __
+habit,custom,usage,tradition
+Excuse me. I'm a(n) __ around here. Can you show me the way to the nearest post office, please?
+stranger,foreigner,explorer,alien
+How much do I __ you?
+owe,buy from,borrow,own to
+There are many more television __ today than there used to be twenty years ago
+viewers,passers-by,onlookers,spectators
+The body structure of zebras is __ that of donkeys
+similar to,the same as,the opposite of,unlike
+Do be serious, please. This isn't a(n) __
+joke,funny,puzzling,comical
+The __ today is full of the news of the incident.
+press,publisher,journalism,reporter
+I'm going to take a(n) __ abroad next summer
+trip,sightseeing,travel,vocation
+Oktay is a(n) __ student. He always gets good grades
+hard-working,lazy,elementary,standard
+He crashed his car into a tree. It was badly __
+damaged,injured,wounded,hurt
+It was a(n) __ question. I couldn't understand a word of it
+difficult,unnecessary,necessary,easy
+Thank you for the dinner last night. I enjoyed it very much. It was __
+excellent,expensive,excited,extreme
+He suddenly came face to face with two __ men and started to run away
+armed,lonely,legless,athletic
+I sat through all those cold and __ nights, just thinking of you
+lonely,daily,selfish,injured
+Stay away from that park after dark. It's too __
+dangerous,large,blind,stormy
+Believe me I feel truly __ for your great kindness. How can I ever repay you?
+grateful,thoughtful,beatiful,shameful
+You can't expect every __ man to become a computer specialist
+average,economic,rare,effective
+You don't know this? How __ you are!
+ignorant,opposite,ungrateful,complicated
+Do you really __ to go there tonight?
+intend,admire,ignore,involve
+You'll have to learn to control your __ if you still want to work here with us
+temper,mind,reason,habit
+Please __ your papers in half before you hand them in
+fold,turn,wrap,crease
+Do you __ in any sporting activities?
+participate,take place,take a stand,take position
+Despite all his efforts in the final stages of the race, there wasn't in fact much __ he could do to change the inevitable
+left,finished,forgotten,completed
+He says he used to __ much more than that in his previous job
+earn,inherit,win,gain
+It was very __ of him to leave you there all unprotected
+inconsiderate,kind,admirable,polite
+There's a __ here which says, "Beware of the dog!"
+notice,flag,label,billboard
+I didn't say I didn't like it. It just doesn't __ my waist properly
+fit,match,look good on,go well with
+Will you kindly not __ me again till I've finished!
+interrupt,interview,interfere,interpret
+What was all that __ about?
+talk,speak,say,tell
+I have some wonderful news to __ you
+tell,speak,say,talk
+Would you __ my keeping the door ajar?
+mind,intend,obstruct,close
+By the way, that __ me something I was supposed to be doing this afternoon
+reminds,remembers,memorizes,remains
+What do you do for recreation? Don't you have a __?
+hobby,leisure,sport,rest
+Previous experience is certainly a(n) __ when you're applying for a job
+advantage,promotion,advertisement,profit
+Life used to be __ and gay for us, too!
+lively,livelihood,lifelong,lifelike
+__ relations between the two countries have not been very satisfactory recently.
+Economic,Abnormal,Monotone,Criminal
+Oh, it must be __ cold weather now up there on top of the hill
+freezing,confusing,stuffy,boiling
+I am sorry for bothering you at such a(n) __ hour.
+inconvenient,unnecessary,necessary,incompetent
+The service here is always __ . It has never been compulsory.
+voluntary,inadequate,irregular,chronic
+I am rather __ about her health. Really, I must see the doctor at once.
+concerned,continuous,conceited,complicated
+She is now a popular, __ film star.
+glamorous,generous,greasy,grieving
+A(n) __ soldier is most likely to get shot in the ass.
+cowardly,unconscious,vertical,courageous
+It's __ !! They charged me double the price of an ordinary bottle of wine in that restaurant.
+outrageous,undesirable,outstanding,competitive
+Her voice had become __ from shouting. Her last words were almost inaudible.
+hoarse,reserved,damp,sour
+It seems to me that they never gave a thought to __ future problems when the plans were being laid down five years ago.
+probable,unbelievable,untrustworthy,unreasonable
+My __ objection to neurotics is that they are difficult to live with.
+principal,primarily,principle,priority
+You could __ being a little bit more friendly, couldn't you?
+afford,effort,comfort,support
+People become quite __ when it comes to discussing the differences between the sexes.
+illogical,illiterate,illegible,illegal
+I think it was a gross __ to condemn her.
+injustice,impartiality,fairness,penalty
+I resent your last remarks and certainly demand an apology. Sir, we're running a __ business here!
+respectable,remarkable,reciprocal,reluctant
+Precautions of this sort are necessary, for it is next to impossible to __ the exact nature of the difficulties which will confront us.
+foretell,forewarn,forbid,forsake
+She is very __. You just couldn't make her walk past under a ladder.
+credulous,religious,supernatural,superstitious
+In the medical profession, men __ women by two to one.
+outnumber,outlive,outdo,outshine
+Severe difficulties must be __ before cloning can be done with mammals and humans
+overcome,concluded,aggravated,endangered
+He was quite contented; he led a(n) __ life.
+orderly,miserable,prosperously,happily
+The bridge is so immensely long that the shape of the earth had to be __ by its designer as an essential part of the project.
+taken into account,given an account of,given approval to,caught up with
+Despite these overwhelmingly difficult trading conditions, the company has __ produced outstanding results
+nevertheless,therefore,accordingly,consequently
+It suddenly __ to me that Mr Izbul was the greatest dramatist ever who had never written a play!
+occurred,dawned,predicted,presented
+Scientists admit they are still __ by the new disease which is, superficially, not so different from so many other respiratory ailments.
+intrigued,slandered,massacred,bribed
+After visiting the Archaeological Museum in the morning, the Izbuls kindly __ us to lunch at a local shish-kebab restaurant.
+treated,threatened,approved,thrilled
+I've listened to your argument. It's neither here nor there. In other words, it's quite __.
+irrelevant,resentful,rebellious,scornful
+"Have you anything to __?" said the young customs officer, looking straight at me in the eye.
+declare,identify,remember,confirm
+__ ocean-liners offer their voyagers a great variety of civilized comforts.
+Contemporary,Vulgar,Competent,Prospective
+I'm __ of seeing your stupid face around all the time.
+sick and tired,loving and fond,jealous and angry,displeased and disappointed
+They say a woman might forgive an insult, but she would never forgive being __.
+ignored,sacrificed,persuaded,praised
+These results seem to __ that calcium and vitamin D supplementation may also prevent tooth loss from gum disease.
+imply,define,refer,infer
+He would have been __ if the President's pardon hadn't arrived just in the nick of time.
+executed,made a hangman,elevated,released
+He is a rather timid person on the whole. But, when he has had a few drinks, he becomes quite __.
+aggressive,impressive,permissive,intensive
+Modern airlines offer their passengers a great variety of __ comforts.
+vulgar,civilized,lazy,competent
+What they call "female intuition" is very easy to explain in evolutionary __.
+terms,lectures,words,books
+They say a woman might forgive an insult, but she would never forgive being __.
+ignored,persuaded,sacrificed,praised
+These results seem to __ that vitamin B12 supplementation may work wonders for the brain.
+imply,define,refer,infer
+Am I to __ from your last remarks that my services are no longer required here?
+infer,define,refer,imply
