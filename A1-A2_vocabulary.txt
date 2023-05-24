@@ -1,27 +1,152 @@
-The fact or process of doing something, typically to achieve an aim.
-Action, Operation, Movement, Job
-Make a choice from a number of alternatives
-Decide,Determine,Judge,Agree
-Express regret for something that one has done wrong
-Apologize,Explain, Confess, Admit
-The act of gathering information or facts about something.
-Research, Invent, Recall, Observe
-A person who buys and uses goods or services.
-Consumer, Reflect, Encourage, Analyze
-The act of telling someone about something or giving them information.
-Inform, Neglect, Defend, Experiment
-A feeling of worry or unease about something with an uncertain outcome.
-Anxiety, Conclude, Relate, Entertain
-The act of making something clear or understandable.
-Explain, Distract, Resist, Contradict
-A short period of time when you stop working or studying to rest or relax.
-Break, Predict, Analyze, Pursue
-The act of looking at or considering something carefully.
-Examine, Support, Resist, Participate
-A plan or course of action to achieve a particular goal or result.
-Strategy, Ignore, Suggest, Encounter
-A sudden and usually temporary feeling of fear, shock, or surprise.
-Shock, Persist, Extend, Defend
-The act of showing or expressing gratitude or appreciation.
-Thank, Neglect, Distract, Categorize
+Choose the synonym of the word: "Beautiful."
+Attractive, Ugly, Clever, Strange
+Choose the synonym of the word "Big."
+Large, Small, Tiny, Huge
+Choose the synonym of the word "Fast."
+Quick, Slow, Attractive, Strange
+Choose the synonym of the word "Happy."
+Glad, Sad, Angry, Mad
+Choose the synonym of the word "Sad."
+Unhappy, Glad, Angry, Mad
+Choose the synonym of the word "Angry."
+Mad, Sad, Happy, Glad
+Choose the synonym of the word "Mad."
+Angry, Sad, Happy, Glad
+Choose the synonym of the word "Good."
+Great, Bad, Terrible, Awful
+Choose the synonym of the word "Bad."
+Terrible, Good, Great, Awful
+Choose the synonym of the word "Terrible."
+Bad, Good, Great, Awful
+Choose the synonym of the word "Great."
+Good, Bad, Terrible, Awful
+Choose the synonym of the word "Awful."
+Terrible, Bad, Good, Great
+Choose the synonym of the word "Friendly."
+Kind,Rude,Mean,Unfriendly
+Choose the synonym of the word "Brave."
+Courageous,Cowardly,Timid,Fearful
+Choose the synonym of the word "Generous."
+Charitable,Stingy,Greedy,Selfish
+Choose the synonym of the word "Quiet."
+Silent,Noisy,Loud,Boisterous
+Choose the synonym of the word "Smart."
+Intelligent,Dull,Stupid,Ignorant
+Choose the synonym of the word "Patient."
+Tolerant,Impatient,Restless,Irritable
+Choose the synonym of the word "Interesting."
+Fascinating,Boring,Dull,Tedious
+Choose the correct word for "a person who flies an airplane":
+Pilot, Doctor, Teacher, Engineer
+Choose the correct word for "a place where you can borrow books":
+Library,Hospital,Supermarket, Restaurant
+Choose the correct word for "a small, round fruit that grows on a tree":
+Apple,Banana,Tomato,Orange
+Choose the correct word for "a mode of transportation that runs on tracks":
+Train, Car,Bicycle,Boat
+Choose the correct word for "a device used for making phone calls":
+Telephone,Computer,Television,Camera
+Choose the correct word for "a piece of furniture used for sitting":
+Chair,Table,Bed,Lamp
+Choose the correct word for "a vehicle with two wheels that you ride":
+Bicycle, Car,Bus,Motorcycle
+Choose the correct word for "a sweet, frozen dessert":
+Ice cream,Pizza,Salad,Sandwich
+Choose the correct word for "a building where people go to see films":
+Cinema,Museum,Gym,Office
+Choose the correct word for "a person who takes care of your teeth":
+Dentist, Chef,Lawyer,Artist
+Choose the correct word for "a round, flat object that you throw and catch":
+Ball,Cube, Doll, Teddy bear
+Choose the correct word for "a device used for listening to music":
+Headphones, Camera, Clock, Pen
+Choose the correct word for "a building where people live":
+House, Office, Store, School
+Choose the correct word for "a large, flat surface where you can write or draw":
+Board,Chair, Mirror, Pillow
+Choose the correct word for "a small, thin piece of paper used for writing or printing":
+Sheet,Pencil, Eraser, Marker
+Choose the correct word for "a person who teaches":
+Teacher,Student,Parent,Doctor
+Choose the correct word for "a vehicle with four wheels that you use for transportation":
+Car,Bicycle,Boat,Plane
+Choose the correct word for "a person who works in a hospital and treats sick people":
+Doctor, Teacher, Chef, Firefighter
+Choose the correct word for "a small, portable device used for making phone calls":
+Mobile phone,Television,Computer, Radio
+Choose the correct word for "a place where you can buy fruits, vegetables, and groceries":
+Supermarket, Restaurant, Library, Park
+Choose the correct word for "a person who designs buildings":
+Architect, Engineer, Scientist, Artist
+Choose the correct word for "a large, deep body of water":
+Ocean,Mountain, Forest, Desert
+Choose the correct word for "a person who plays a musical instrument":
+Musician,Singer,Dancer, Actor
+Choose the correct word for "a soft, comfortable piece of furniture for sitting or resting":
+Sofa, Table, Chair, Desk
+Choose the correct word for "a vehicle with four wheels used for transportation":
+Car,Bicycle,Motorcycle,Boat
+Choose the correct word for "a round, sweet, baked dessert":
+Cake,Pizza,Salad,Sandwich
+Choose the correct word for "a person who writes books, stories, or articles":
+Writer,Reader, Painter,Scientist
+Choose the correct word for "a person who works in a restaurant and cooks food":
+Chef,Doctor,Teacher,Firefighter
+Choose the correct word for "a person who works in a school and teaches students":
+Teacher,Student,Parent,Doctor
+Choose the correct word for "a person who works in a bank":
+Banker,Doctor,Teacher,Firefighter
+Choose the correct word for "a person who works in a hospital and treats sick people":
+Doctor,Teacher,Chef,Firefighter
+Choose the correct word for "a person who works in a court and helps people with legal problems":
+Lawyer,Doctor,Teacher,Firefighter
+Choose the correct word for "a person who works in a fire station and puts out fires":
+Firefighter,Doctor,Teacher,Chef
+Choose the correct word for "a person who works in a police station and catches criminals":
+Police officer,Doctor,Teacher,Chef
+Choose the correct word for "a person who works in a post office and delivers mail":
+Mail carrier,Doctor,Teacher,Chef
+Choose the correct word for "a person who works in a library and helps people find books":
+Librarian,Doctor,Teacher,Chef
+Choose the correct word for "a person who works in a store and sells things":
+Salesperson,Doctor,Teacher,Chef
+Choose the correct word for "a person who works in a factory and makes things":
+Worker,Doctor,Teacher,Chef
+Find a synonym for the word "hot":
+Warm,Cold,Cool,Freezing
+Find a synonym for the word "cold":
+Freezing,Warm,Cool,Hot
+Find a synonym for the word "difficult":
+Hard,Easy,Simple,Challenging
+Find a synonym for the word "tired":
+Exhausted,Energetic,Sleepy,Rested
+Find a synonym for the word "hungry":
+Starving,Full,Thirsty,Empty
+Find a synonym for the word "friendly":
+Kind,Rude,Mean,Hostile
+Choose the correct word for "a person who flies an airplane":
+Pilot,Mechanic,Soldier,Chef
+Choose the correct word for "a place where you can borrow books":
+Library,Hospital,Supermarket,Restaurant
+Choose the correct word for "a small, round fruit that grows on a tree":
+Apple,Banana,Tomato,Orange
+Choose the correct word for "a mode of transportation that runs on tracks":
+Train,Car,Bicycle,Boat
+Choose the correct word for "a device used for making phone calls":
+Telephone,Computer,Television,Camera
+Choose the correct word for "a piece of furniture used for sitting":
+Chair,Table,Bed,Lamp
+Choose the correct word for "a vehicle with two wheels that you ride":
+Bicycle,Car,Bus,Boat
+Choose the correct word for "a building where people go to see films":
+Cinema,Museum,Gym,Office
+Choose the correct word for "a person who takes care of your teeth":
+Dentist,Chef,Lawyer,Artist
+Choose the correct word for "a round, flat object that you throw and catch":
+Ball,Cube,Doll,Teddy bear
+Choose the correct word for "a building where people live":
+House,Office,Store,School
+Choose the correct word for "a long, narrow body of water between two pieces of land":
+River,Lake,Ocean,Strait
+
 

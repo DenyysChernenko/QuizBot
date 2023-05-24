@@ -112,8 +112,6 @@ def grammar_tests(message):
             question = lines[index-1]
             options = lines[index].split(",")
             answer = options[0].strip()
-            bot.send_message(message.chat.id, f'index == {index}')
-            bot.send_message(message.chat.id, f'index == {index-1}')
 
             random.shuffle(options)
 
