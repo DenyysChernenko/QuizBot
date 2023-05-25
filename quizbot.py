@@ -1,41 +1,49 @@
 import telebot
 import random
 from telebot import types
-topic_history = []
-
-
-question_counter = 1
-correct_answers = 0
-options = []
-answer = ''
-chosen_lvl = ''
+user_topic_history = {}
+user_data = {}
 # Functions for tests
 
 def vocabulary_tests(message):
-    global question_counter
-    global correct_answers
-    global options
-    global answer
-    global chosen_lvl
+    user_id = message.from_user.id
+    if user_id not in user_data:
+        user_data[user_id] = {}
 
-    if question_counter > 5:
-        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!!!!!')
-        question_counter = 1
-        correct_answers = 0
-        bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
-        return buttons_grammar(message)
+    if user_id in user_data and 'question_counter' in user_data[user_id] and user_data[user_id]['question_counter'] > 5:
+        bot.send_message(message.chat.id,
+                         f'You have finished the test with {user_data[user_id]["correct_answers"]} correct answers!!!!!')
+        user_data[user_id] = {}
+        return button_vocabulary(message)
+
+
+    if user_id in user_data and 'chosen_lvl' not in user_data[user_id]:
+         user_data[user_id]['chosen_lvl'] = None
 
     if message.text == 'A1-A2':
         file_names = 'A1-A2_vocabulary.txt'
         chosen_lvl = file_names
+        user_data[user_id]['chosen_lvl'] = chosen_lvl
     elif message.text == 'B1-B2':
         file_names = 'B1-B2_vocabulary.txt'
         chosen_lvl = file_names
+        user_data[user_id]['chosen_lvl'] = chosen_lvl
     elif message.text == 'C1-C2':
         file_names = 'C1-C2_vocabulary.txt'
         chosen_lvl = file_names
+        user_data[user_id]['chosen_lvl'] = chosen_lvl
     else:
-        chosen_lvl = chosen_lvl
+        chosen_lvl = user_data[user_id]['chosen_lvl']
+
+
+    if 'question_counter' not in user_data[user_id]:
+        user_data[user_id]['question_counter'] = 1
+
+    if 'answer' not in user_data[user_id]:
+        user_data[user_id]['answer'] = ''
+
+    if 'correct_answers' not in user_data[user_id]:
+        user_data[user_id]['correct_answers'] = 0
 
     with open(chosen_lvl, 'r') as file:
         lines = file.readlines()
@@ -52,56 +60,77 @@ def vocabulary_tests(message):
             answer_buttons = [telebot.types.KeyboardButton(option.strip()) for option in options]
             markup.add(*answer_buttons)
             markup.add('Back')
+            bot.send_message(message.chat.id, f'{chosen_lvl}')
+            bot.send_message(message.chat.id, f'{index}')
+            bot.send_message(message.chat.id, f'{index-1}')
 
-            bot.send_message(message.chat.id, f'{question_counter}. {question}', reply_markup=markup)
+            user_data[user_id]['answer'] = answer
+
+            bot.send_message(message.chat.id, f'{user_data[user_id]["question_counter"]}. {question}',  reply_markup=markup)
             bot.register_next_step_handler(message, handle_answer)
 
+
 def handle_answer(message):
-    global question_counter
-    global correct_answers
-    question_counter += 1
+    user_id = message.from_user.id
+    if user_id not in user_data:
+        return
+
+    user_data[user_id]['question_counter'] += 1
+    answer = user_data[user_id]['answer']
+
     if message.text == answer:
-        correct_answers += 1
-        bot.reply_to(message, f'Correct answer! Correct answers: {correct_answers}✔️')
+        user_data[user_id]['correct_answers'] += 1
+        bot.reply_to(message, f'Correct answer! Correct answers: {user_data[user_id]["correct_answers"]}✔️')
         vocabulary_tests(message)
     elif message.text == 'Back':
-        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
-        question_counter = 1
-        correct_answers = 0
-        bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
+        bot.send_message(message.chat.id,
+                         f'You have finished the test with {user_data[user_id]["correct_answers"]} correct answers!')
+        user_data[user_id] = {}
         return button_vocabulary(message)
     else:
-        bot.reply_to(message, f'Wrong answer! Correct answers: {correct_answers}❌')
+        bot.reply_to(message, f'Wrong answer! Correct answers: {user_data[user_id]["correct_answers"]}❌')
         bot.send_message(message.chat.id, f'Correct answer is: \"{answer}\"🕵️‍♂️')
         vocabulary_tests(message)
 
 
 # Functions for tests
 def grammar_tests(message):
-    global question_counter
-    global correct_answers
-    global options
-    global answer
-    global chosen_lvl
+    user_id = message.from_user.id
+    if user_id not in user_data:
+        user_data[user_id] = {}
 
-    if question_counter > 10:
-        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!!!!!')
-        question_counter = 1
-        correct_answers = 0
-        bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
+    if user_id in user_data and 'question_counter' in user_data[user_id] and user_data[user_id]['question_counter'] > 10:
+        bot.send_message(message.chat.id,
+                         f'You have finished the test with {user_data[user_id]["correct_answers"]} correct answers!!!!!')
+        user_data[user_id] = {}
         return buttons_grammar(message)
+
+    if user_id in user_data and 'chosen_lvl' not in user_data[user_id]:
+        user_data[user_id]['chosen_lvl'] = None
 
     if message.text == 'A1-A2':
         file_names = 'A1-A2_grammar.txt'
         chosen_lvl = file_names
+        user_data[user_id]['chosen_lvl'] = chosen_lvl
     elif message.text == 'B1-B2':
         file_names = 'B1-B2_grammar.txt'
         chosen_lvl = file_names
+        user_data[user_id]['chosen_lvl'] = chosen_lvl
     elif message.text == 'C1-C2':
         file_names = 'C1-C2_grammar.txt'
         chosen_lvl = file_names
+        user_data[user_id]['chosen_lvl'] = chosen_lvl
     else:
-        chosen_lvl = chosen_lvl
+        chosen_lvl = user_data[user_id]['chosen_lvl']
+
+    if 'question_counter' not in user_data[user_id]:
+        user_data[user_id]['question_counter'] = 1
+
+    if 'answer' not in user_data[user_id]:
+        user_data[user_id]['answer'] = ''
+
+    if 'correct_answers' not in user_data[user_id]:
+        user_data[user_id]['correct_answers'] = 0
 
     with open(chosen_lvl, 'r') as file:
         lines = file.readlines()
@@ -112,7 +141,7 @@ def grammar_tests(message):
             question = lines[index-1]
             options = lines[index].split(",")
             answer = options[0].strip()
-
+            user_data[user_id]['answer'] = answer
             random.shuffle(options)
 
             markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
@@ -120,30 +149,28 @@ def grammar_tests(message):
             markup.add(*answer_buttons)
             markup.add('Back')
 
-            bot.send_message(message.chat.id, f'{question_counter}. {question}', reply_markup=markup)
-            bot.register_next_step_handler(message, handle_answer)
+            bot.send_message(message.chat.id, f'{user_data[user_id]["question_counter"]}. {question}',reply_markup=markup)
+            bot.register_next_step_handler(message, handle_answers)
 
+def handle_answers(message):
+    user_id = message.from_user.id
 
-def handle_answer(message):
-    global question_counter
-    global correct_answers
-    question_counter += 1
+    user_data[user_id]['question_counter'] += 1
+    answer = user_data[user_id]['answer']
+
     if message.text == answer:
-        correct_answers += 1
-        bot.reply_to(message, f'Correct answer! Correct answers: {correct_answers}✔️')
+        user_data[user_id]['correct_answers'] += 1
+        bot.reply_to(message, f'Correct answer! Correct answers: {user_data[user_id]["correct_answers"]}✔️')
         grammar_tests(message)
     elif message.text == 'Back':
-        bot.send_message(message.chat.id, f'You have finished the test with {correct_answers} correct answers!')
-        question_counter = 1
-        correct_answers = 0
-        bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
+        bot.send_message(message.chat.id,
+                         f'You have finished the test with {user_data[user_id]["correct_answers"]} correct answers!')
+        user_data[user_id] = {}
         return buttons_grammar(message)
     else:
-        bot.reply_to(message, f'Wrong answer! Correct answers: {correct_answers}❌')
+        bot.reply_to(message, f'Wrong answer! Correct answers: {user_data[user_id]["correct_answers"]}❌')
         bot.send_message(message.chat.id, f'Correct answer is: \"{answer}\"🕵️‍♂️')
         grammar_tests(message)
-
-
 
 
 # Functions
@@ -216,9 +243,6 @@ def button_vocabulary(message):
     back_button = types.KeyboardButton('Back')
     markup.add(first_level_button, second_level_button, third_level_button, back_button)
     choosen_option_message = f"You have chosen <b>Vocabulary learning.</b>\n"
-    bot.send_message(message.chat.id, f'<b>Words and definitions</b> - you will be given a'
-                                      f'definition of the word, and you have to choose the'
-                                      f'most suitable word from the 4 given options.', parse_mode='html', reply_markup=markup)
     bot.send_message(message.chat.id, choosen_option_message, reply_markup=markup, parse_mode='html')
     level_message = "Now, you must pick your current level of English.\n"
     bot.send_message(message.chat.id, level_message, reply_markup=markup, parse_mode='html')
@@ -230,14 +254,18 @@ def button_vocabulary(message):
 # Parsing text
 @bot.message_handler(content_types=['text'])
 def buttons(message):
+        user_id = message.chat.id
+        if user_id not in user_topic_history:
+            user_topic_history[user_id] = []
+
         if message.text == 'Help':
             help(message)
         elif message.text == 'About authors':
             about_authors(message)
         elif message.text == 'Grammar tests':
-            topic_history.append('Grammar tests')
+            user_topic_history[user_id].append('Grammar tests')
             buttons_grammar(message)
-        elif topic_history and topic_history[-1] == 'Grammar tests' and message.text != 'Back':
+        elif user_topic_history[user_id] and user_topic_history[user_id][-1] == 'Grammar tests' and message.text != 'Back':
             if message.text == 'A1-A2':
                 bot.send_message(message.chat.id, 'Your chosen level: <b>A1-A2</b>', parse_mode='html')
                 grammar_tests(message)
@@ -252,9 +280,9 @@ def buttons(message):
                 bot.send_message(message.chat.id, 'Please, choose one of the buttons below' , parse_mode = 'html')
 
         elif message.text == 'Vocabulary learning':
-            topic_history.append('Vocabulary learning')
+            user_topic_history[user_id].append('Vocabulary learning')
             button_vocabulary(message)
-        elif topic_history and topic_history[-1] == 'Vocabulary learning' and message.text != 'Back':
+        elif user_topic_history[user_id] and user_topic_history[user_id][-1] == 'Vocabulary learning' and message.text != 'Back':
             if message.text == 'A1-A2':
                 bot.send_message(message.chat.id, 'Your chosen level: <b>A1-A2</b>', parse_mode='html')
                 vocabulary_tests(message)
@@ -265,10 +293,10 @@ def buttons(message):
                 bot.send_message(message.chat.id, 'Your chosen level: <b>C1-C2</b>', parse_mode = 'html')
                 vocabulary_tests(message)
         elif message.text == 'Back':
-            if len(topic_history) > 0:
-                topic_history.pop()
-                if len(topic_history) > 0:
-                    message.text = topic_history[-1]
+            if len(user_topic_history[user_id]) > 0:
+                user_topic_history[user_id].pop()
+                if len(user_topic_history[user_id]) > 0:
+                    message.text = user_topic_history[user_id][-1]
                 else:
                     buttons_start(message)
         else:

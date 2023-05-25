@@ -148,5 +148,3 @@ Choose the correct word for "a building where people live":
 House,Office,Store,School
 Choose the correct word for "a long, narrow body of water between two pieces of land":
 River,Lake,Ocean,Strait
-
-
